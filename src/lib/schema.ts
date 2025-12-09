@@ -291,11 +291,16 @@ export function generateBlogPostSchema(
     author: {
       "@type": "Organization",
       name: BRAND.brandName,
+      url: `https://${BRAND.domain}`,
     },
     publisher: {
       "@type": "Organization",
       name: BRAND.brandName,
       url: `https://${BRAND.domain}`,
+      logo: {
+        "@type": "ImageObject",
+        url: `https://${BRAND.domain}/favicon.png`,
+      },
     },
   };
 }
@@ -335,10 +340,10 @@ export function generateAggregateRatingSchema(
     name: BRAND.brandName,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: avgRating.toFixed(1),
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: testimonials.length.toString(),
+      ratingValue: Number(avgRating.toFixed(1)),
+      bestRating: 5,
+      worstRating: 1,
+      ratingCount: testimonials.length,
     },
   };
 }
@@ -355,9 +360,9 @@ export function generateReviewSchema(
     },
     reviewRating: {
       "@type": "Rating",
-      ratingValue: t.rating.toString(),
-      bestRating: "5",
-      worstRating: "1",
+      ratingValue: t.rating,
+      bestRating: 5,
+      worstRating: 1,
     },
     reviewBody: t.text,
     itemReviewed: {
