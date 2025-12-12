@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { getOrGenerateContent, buildContentKey } from "@/lib/contentGenerator";
+import { getStaticContent } from "@/config/staticContent";
+import { buildContentKey } from "@/lib/contentGenerator";
 import { AITemplateName } from "@/config/aiPrompts";
 
 interface UseAIContentResult {
@@ -9,54 +10,36 @@ interface UseAIContentResult {
   isCached: boolean;
 }
 
+/**
+ * Hook to get AI content from static pre-generated content.
+ * No runtime API calls - content is inlined at build time.
+ */
 export function useAIContent(
   type: string,
-  templateName: AITemplateName,
-  variables: Record<string, string>,
+  _templateName: AITemplateName,
+  _variables: Record<string, string>,
   keyParts: string[] = []
 ): UseAIContentResult {
   const [content, setContent] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const [isCached, setIsCached] = useState<boolean>(false);
 
   const key = buildContentKey(type, ...keyParts);
 
   useEffect(() => {
-    let isMounted = true;
-
-    async function fetchContent() {
-      setIsLoading(true);
-      setError(null);
-
-      try {
-        const result = await getOrGenerateContent(key, templateName, variables);
-
-        if (!isMounted) return;
-
-        if (result.error) {
-          setError(result.error);
-          setContent("");
-        } else {
-          setContent(result.content);
-          setIsCached(result.cached);
-        }
-      } catch (err) {
-        if (!isMounted) return;
-        setError(err instanceof Error ? err.message : "Failed to load content");
-      } finally {
-        if (isMounted) {
-          setIsLoading(false);
-        }
-      }
+    // Immediate lookup from static content - no API call
+    const staticContent = getStaticContent(key);
+    
+    if (staticContent) {
+      setContent(staticContent);
+    } else {
+      // Content not found in static file - this is expected for 
+      // service-in-location pages that haven't been pre-generated yet
+      console.warn(`Static content not found for key: ${key}`);
+      setContent("");
     }
+    
+    setIsLoading(false);
+  }, [key]);
 
-    fetchContent();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [key, templateName, JSON.stringify(variables)]);
-
-  return { content, isLoading, error, isCached };
+  return { content, isLoading, error: null, isCached: true };
 }
