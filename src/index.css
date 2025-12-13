@@ -114,6 +114,12 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
+  /* Reserve space for hero to prevent CLS on initial render */
+  #root {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold tracking-tight;
   }
