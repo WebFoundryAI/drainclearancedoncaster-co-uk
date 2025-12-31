@@ -2,9 +2,21 @@
 
 This document covers prerendering options for SEO optimization.
 
+## Important: Is Prerendering Necessary?
+
+**For Google SEO: Usually NOT required.** Google's crawler (Googlebot) executes JavaScript and renders SPAs correctly. React Helmet tags, JSON-LD schemas, and canonical URLs are all properly indexed from client-rendered content.
+
+**When prerendering IS useful:**
+- **Social media previews** (Facebook, Twitter, LinkedIn) - these bots don't execute JS
+- **AI/LLM bots** (ChatGPT, Claude) - may not render JS
+- **Older search engines** (Bing is improving but still inconsistent)
+- **Performance-critical landing pages** where you want instant HTML
+
+**Recommendation:** Test your site with Google's URL Inspection tool first. If content renders correctly there, prerendering is optional for SEO purposes.
+
 ---
 
-## Option 1: Prerender.io (Recommended)
+## Option 1: Prerender.io (For Social/Bot Support)
 
 ### Setup
 1. Sign up at https://prerender.io
