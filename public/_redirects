@@ -1,0 +1,4 @@
+# Redirects for Lovable/Netlify-style hosting
+
+# Sitemap redirect to dynamic edge function
+/sitemap.xml  https://cauiylskdhxyepitquwv.supabase.co/functions/v1/sitemap  301
