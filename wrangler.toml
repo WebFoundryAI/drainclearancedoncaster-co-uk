@@ -1,0 +1,6 @@
+# Cloudflare Pages configuration
+name = "manchester-blocked-drain"
+pages_build_output_dir = "dist"
+
+[build]
+command = "bun run build"
