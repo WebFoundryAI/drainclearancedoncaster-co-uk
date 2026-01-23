@@ -13,7 +13,7 @@ const description = `Complete sitemap for ${BRAND.brandName}. Browse all drainag
 const staticPages = [
   { url: '/', name: 'Home' },
   { url: '/services', name: 'All Services' },
-  { url: '/locations', name: 'All Areas' },
+  { url: '/locations', name: 'All Locations' },
   { url: '/about', name: 'About Us' },
   { url: '/contact', name: 'Contact Us' },
   { url: '/faq', name: 'FAQ' },
@@ -106,7 +106,7 @@ const totalPages =
 
         <!-- Locations -->
         <div>
-          <h2 class="text-xl font-semibold mb-4">Areas We Cover ({locationPages.length})</h2>
+          <h2 class="text-xl font-semibold mb-4">Locations ({locationPages.length})</h2>
           <ul class="space-y-2">
             {locationPages.map(page => (
               <li>
