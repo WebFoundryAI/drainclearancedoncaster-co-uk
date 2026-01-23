@@ -19,8 +19,8 @@ if (!location) {
   return Astro.redirect('/locations');
 }
 
-const title = `Drain Services in ${location.name} | ${BRAND.brandName}`;
-const description = `Professional drainage services in ${location.name}, ${location.countyOrRegion}. 24/7 emergency drain unblocking, CCTV surveys, and repairs. Call ${BRAND.phoneFormatted}`;
+const title = `Blocked Drains ${location.name} – Fast Local Service`;
+const description = `24/7 drain unblocking in ${location.name}. No call-out fee, local engineers. Call ${BRAND.phoneFormatted} for fast response.`;
 
 const otherLocations = LOCATIONS.filter((l) => l.slug !== location.slug).slice(0, 4);
 const faqs = getLocationFAQs(location.name);

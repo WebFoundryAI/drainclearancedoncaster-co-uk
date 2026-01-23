@@ -157,3 +157,20 @@ export function getSubServiceBySlug(serviceSlug: string, subServiceSlug: string)
   const service = getServiceBySlug(serviceSlug);
   return service?.subServices?.find((sub) => sub.slug === subServiceSlug);
 }
+
+// Related services mapping for improved cross-linking
+export const RELATED_SERVICES: Record<string, string[]> = {
+  "blocked-drains": ["drain-unblocking", "cctv-drain-surveys", "drain-jetting"],
+  "drain-unblocking": ["blocked-drains", "drain-jetting", "emergency-drain-services"],
+  "cctv-drain-surveys": ["blocked-drains", "drain-repairs", "drain-jetting"],
+  "drain-jetting": ["blocked-drains", "drain-unblocking", "cctv-drain-surveys"],
+  "emergency-drain-services": ["blocked-drains", "drain-unblocking", "drain-repairs"],
+  "drain-repairs": ["cctv-drain-surveys", "drain-jetting", "blocked-drains"],
+};
+
+export function getRelatedServices(slug: string): Service[] {
+  const relatedSlugs = RELATED_SERVICES[slug] || [];
+  return relatedSlugs
+    .map((relatedSlug) => getServiceBySlug(relatedSlug))
+    .filter((service): service is Service => service !== undefined);
+}
