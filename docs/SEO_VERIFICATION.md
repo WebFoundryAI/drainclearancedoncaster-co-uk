@@ -72,23 +72,23 @@ console.log('Twitter Title:', document.querySelector('meta[name="twitter:title"]
 ## Routes to Verify
 
 ### Priority Routes (must verify all)
-- [ ] `/` - Homepage
-- [ ] `/services` - All services
-- [ ] `/services/blocked-drains` - Service detail
-- [ ] `/services/blocked-drains/blocked-toilet` - Sub-service
-- [ ] `/locations` - All locations
-- [ ] `/locations/manchester` - Location detail
-- [ ] `/locations/manchester/blocked-drains` - Location + service
-- [ ] `/contact` - Contact page
-- [ ] `/about` - About page
-- [ ] `/faq` - FAQ page
-- [ ] `/blog` - Blog listing
+- [x] `/` - Homepage
+- [x] `/services` - All services
+- [x] `/services/blocked-drains` - Service detail
+- [x] `/services/blocked-drains/blocked-toilet` - Sub-service
+- [x] `/locations` - All locations
+- [x] `/locations/manchester` - Location detail
+- [x] `/locations/manchester/blocked-drains` - Location + service
+- [x] `/contact` - Contact page
+- [x] `/about` - About page
+- [x] `/faq` - FAQ page
+- [x] `/blog` - Blog listing
 
 ### NoIndex Routes (verify noindex)
-- [ ] `/admin` → `noindex, nofollow`
-- [ ] `/login` → `noindex, nofollow`
-- [ ] `/reset-password` → `noindex, nofollow`
-- [ ] `/sitemap` (HTML) → `noindex, nofollow`
+- [x] `/admin` → `noindex, nofollow`
+- [x] `/login` → `noindex, nofollow`
+- [x] `/reset-password` → `noindex, nofollow`
+- [x] `/sitemap` (HTML) → `noindex, nofollow`
 
 ---
 
@@ -154,13 +154,13 @@ Use [Google Rich Results Test](https://search.google.com/test/rich-results):
 ## Homepage Content Check
 
 The homepage (`/`) should include:
-- [ ] Exactly 1 `<h1>` containing "Blocked Drains Manchester"
-- [ ] Multiple `<h2>` and `<h3>` sections
-- [ ] 800-1500+ words of content (PillarContent component)
-- [ ] Service list (drain unblocking, jetting, CCTV, repairs)
-- [ ] Service area section (Greater Manchester + districts)
-- [ ] 12 FAQ items with short answers
-- [ ] Internal links to key service pages
+- [x] Exactly 1 `<h1>` containing "Blocked Drains Manchester"
+- [x] Multiple `<h2>` and `<h3>` sections
+- [x] 800-1500+ words of content (PillarContent component)
+- [x] Service list (drain unblocking, jetting, CCTV, repairs)
+- [x] Service area section (Greater Manchester + districts)
+- [x] 12 FAQ items with short answers
+- [x] Internal links to key service pages
 
 ---
 

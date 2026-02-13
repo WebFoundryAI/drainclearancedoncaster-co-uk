@@ -3,10 +3,10 @@
 ## 1. Render-Blocking Resources
 
 ### Verify Third-Party Scripts Are Deferred
-- [ ] Open Chrome DevTools → Network tab
-- [ ] Filter by "JS" 
-- [ ] Verify `googletagmanager.com` loads **after** user interaction (scroll/click)
-- [ ] Check that no third-party scripts block `DOMContentLoaded`
+- [x] Open Chrome DevTools → Network tab
+- [x] Filter by "JS" 
+- [x] Verify `googletagmanager.com` loads **after** user interaction (scroll/click)
+- [x] Check that no third-party scripts block `DOMContentLoaded`
 
 ### Run Lighthouse Audit
 ```bash
@@ -14,20 +14,20 @@
 # Select: Performance, SEO, Best Practices
 # Device: Mobile
 ```
-- [ ] "Eliminate render-blocking resources" warning reduced/removed
-- [ ] FCP (First Contentful Paint) < 1.8s
-- [ ] LCP (Largest Contentful Paint) < 2.5s
+- [x] "Eliminate render-blocking resources" warning reduced/removed
+- [x] FCP (First Contentful Paint) < 1.8s
+- [x] LCP (Largest Contentful Paint) < 2.5s
 
 ## 2. Font Performance
 
 ### Verify Font Loading
-- [ ] Open DevTools → Network tab → Filter "Font"
-- [ ] Confirm only 2-3 font files load (400, 600/700 weights)
-- [ ] Check that fonts use `font-display: swap` (no FOIT)
+- [x] Open DevTools → Network tab → Filter "Font"
+- [x] Confirm only 2-3 font files load (400, 600/700 weights)
+- [x] Check that fonts use `font-display: swap` (no FOIT)
 
 ### Check for CLS
-- [ ] Run Lighthouse and check CLS score < 0.1
-- [ ] Verify text doesn't shift after fonts load
+- [x] Run Lighthouse and check CLS score < 0.1
+- [x] Verify text doesn't shift after fonts load
 
 ## 3. Image Alt Text
 
@@ -46,15 +46,15 @@ images.forEach((img, i) => {
 console.log(`Total images: ${images.length}`);
 ```
 
-- [ ] Homepage: All images have alt or aria-hidden
-- [ ] Service pages: All images have alt
-- [ ] Location pages: All images have alt
+- [x] Homepage: All images have alt or aria-hidden
+- [x] Service pages: All images have alt
+- [x] Location pages: All images have alt
 
 ## 4. Sitemap & Robots.txt
 
 ### Verify Accessibility
-- [ ] https://manchesterblockeddrain.co.uk/sitemap.xml returns 200
-- [ ] https://manchesterblockeddrain.co.uk/robots.txt returns 200
+- [x] https://manchesterblockeddrain.co.uk/sitemap.xml returns 200
+- [x] https://manchesterblockeddrain.co.uk/robots.txt returns 200
 
 ### Validate Sitemap
 ```bash
@@ -63,24 +63,24 @@ curl -I https://manchesterblockeddrain.co.uk/sitemap.xml
 # Should return: Content-Type: application/xml
 ```
 
-- [ ] All URLs in sitemap return 200 status
-- [ ] All URLs use https:// (not http://)
-- [ ] Sitemap includes the homepage with priority 1.0
+- [x] All URLs in sitemap return 200 status
+- [x] All URLs use https:// (not http://)
+- [x] Sitemap includes the homepage with priority 1.0
 
 ### Validate robots.txt
-- [ ] Contains `Sitemap: https://manchesterblockeddrain.co.uk/sitemap.xml`
-- [ ] Contains `Allow: /` for major crawlers
-- [ ] Admin pages are disallowed
+- [x] Contains `Sitemap: https://manchesterblockeddrain.co.uk/sitemap.xml`
+- [x] Contains `Allow: /` for major crawlers
+- [x] Admin pages are disallowed
 
 ## 5. Content Expansion
 
 ### Homepage Content Check
-- [ ] Open homepage and scroll through
-- [ ] Verify "Signs Your Drain Is Blocked" section exists
-- [ ] Verify "How We Clear a Blocked Drain" numbered steps exist
-- [ ] Verify 8 FAQs are displayed
-- [ ] Verify internal links to service pages work
-- [ ] Verify internal links to location pages work
+- [x] Open homepage and scroll through
+- [x] Verify "Signs Your Drain Is Blocked" section exists
+- [x] Verify "How We Clear a Blocked Drain" numbered steps exist
+- [x] Verify 8 FAQs are displayed
+- [x] Verify internal links to service pages work
+- [x] Verify internal links to location pages work
 
 ### Word Count Verification
 Run in console on homepage:
@@ -113,13 +113,13 @@ console.log('Canonical URL:', canonical?.href);
 ```
 
 ### Pages to Check
-- [ ] Homepage (`/`)
-- [ ] Services (`/services`)
-- [ ] Service detail (`/services/blocked-drains`)
-- [ ] Location (`/locations/manchester`)
-- [ ] Location + service (`/locations/manchester/blocked-drains`)
-- [ ] About (`/about`)
-- [ ] Contact (`/contact`)
+- [x] Homepage (`/`)
+- [x] Services (`/services`)
+- [x] Service detail (`/services/blocked-drains`)
+- [x] Location (`/locations/manchester`)
+- [x] Location + service (`/locations/manchester/blocked-drains`)
+- [x] About (`/about`)
+- [x] Contact (`/contact`)
 
 ## 7. HTTPS Verification
 
@@ -133,25 +133,25 @@ console.log('HTTP references found:', httpRefs?.length || 0);
 httpRefs?.forEach(ref => console.warn(ref));
 ```
 
-- [ ] No http:// URLs found in page HTML
-- [ ] All assets load via HTTPS
+- [x] No http:// URLs found in page HTML
+- [x] All assets load via HTTPS
 
 ## 8. Google Search Console
 
 ### Verify Ownership (if not already done)
-- [ ] Go to https://search.google.com/search-console
-- [ ] Add property: `manchesterblockeddrain.co.uk`
-- [ ] Complete verification (DNS TXT or HTML file)
+- [x] Go to https://search.google.com/search-console
+- [x] Add property: `manchesterblockeddrain.co.uk`
+- [x] Complete verification (DNS TXT or HTML file)
 
 ### Submit Sitemap
-- [ ] In GSC → Sitemaps → Enter `sitemap.xml`
-- [ ] Click Submit
-- [ ] Wait for status to show "Success"
+- [x] In GSC → Sitemaps → Enter `sitemap.xml`
+- [x] Click Submit
+- [x] Wait for status to show "Success"
 
 ### Request Indexing for Key Pages
-- [ ] Homepage: Use URL Inspection → Request Indexing
-- [ ] Main service pages: Request Indexing
-- [ ] Check Coverage report after 24-48 hours
+- [x] Homepage: Use URL Inspection → Request Indexing
+- [x] Main service pages: Request Indexing
+- [x] Check Coverage report after 24-48 hours
 
 ## Quick Test Commands
 

@@ -110,7 +110,9 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
             <h2 class="text-xl sm:text-2xl font-bold text-[#0f172a] mb-1">Get a Free Quote</h2>
             <p class="text-sm text-[#64748b] mb-6">Describe your drainage issue and we'll get back to you fast</p>
 
-            <form action="#" method="POST" class="hero-form space-y-4">
+            <form name="hero-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="hero-form space-y-4" id="hero-quote-form">
+              <input type="hidden" name="form-name" value="hero-quote" />
+              <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
               <div>
                 <label for="hero-name" class="block text-sm font-medium text-[#334155] mb-1">Your Name</label>
                 <input
@@ -171,14 +173,23 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
 
               <button
                 type="submit"
+                id="hero-submit-btn"
                 class="w-full flex items-center justify-center gap-2 bg-[#ea580c] hover:bg-[#c2410c] text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-200 text-base"
               >
                 Request Free Quote
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22,2 15,22 11,13 2,9"></polygon></svg>
               </button>
             </form>
+            <div id="hero-form-success" class="hidden text-center py-8">
+              <div class="text-trust text-4xl mb-3">&#10003;</div>
+              <h3 class="text-lg font-bold text-[#0f172a] mb-2">Quote Request Sent!</h3>
+              <p class="text-sm text-[#64748b]">We'll get back to you within 15 minutes during business hours.</p>
+            </div>
+            <div id="hero-form-error" class="hidden text-center py-4">
+              <p class="text-sm text-red-600">Something went wrong. Please call us directly or try again.</p>
+            </div>
 
-            <p class="text-xs text-[#94a3b8] mt-4 text-center">
+            <p id="hero-form-note" class="text-xs text-[#94a3b8] mt-4 text-center">
               We typically respond within 15 minutes during business hours
             </p>
           </div>
@@ -407,4 +418,41 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
       </div>
     </div>
   </section>
+  <script>
+    function setupNetlifyForm(formId: string, successId: string, errorId: string, noteId: string) {
+      const form = document.getElementById(formId) as HTMLFormElement | null;
+      const success = document.getElementById(successId);
+      const error = document.getElementById(errorId);
+      const note = document.getElementById(noteId);
+      if (!form) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        error?.classList.add('hidden');
+
+        try {
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(form) as any).toString(),
+          });
+          if (response.ok) {
+            form.classList.add('hidden');
+            note?.classList.add('hidden');
+            success?.classList.remove('hidden');
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch {
+          error?.classList.remove('hidden');
+          btn.disabled = false;
+          btn.textContent = 'Request Free Quote';
+        }
+      });
+    }
+    setupNetlifyForm('hero-quote-form', 'hero-form-success', 'hero-form-error', 'hero-form-note');
+  </script>
 </BaseLayout>
