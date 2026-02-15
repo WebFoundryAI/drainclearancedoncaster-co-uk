@@ -30,6 +30,75 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
     icon: service.icon,
   }))
 );
+
+const serviceVisitInclusions = [
+  'Drainage diagnosis and blockage assessment',
+  'Clear explanation of cause and recommended fix',
+  'Upfront fixed quote before work begins',
+  'Professional clearance using the right equipment',
+  'Aftercare advice to reduce repeat blockages',
+];
+
+const serviceProcess = [
+  {
+    title: '1. Call Us',
+    text: `Call ${BRAND.phoneFormatted} and tell us what is happening. We will prioritise urgent issues immediately.`,
+  },
+  {
+    title: '2. Diagnose',
+    text: 'Our engineer inspects the system, checks access points, and confirms the likely cause of the blockage.',
+  },
+  {
+    title: '3. Fix',
+    text: 'We clear the blockage using suitable tools such as drain rods, jetting, or CCTV-led methods when needed.',
+  },
+  {
+    title: '4. Aftercare',
+    text: 'You receive practical guidance on prevention, plus clear next steps if further repair work is required.',
+  },
+];
+
+const locationHighlights = [
+  {
+    name: 'Salford',
+    slug: 'salford',
+    serviceSlug: 'blocked-drains',
+    copy: 'From terraced homes near Pendleton to newer apartments around MediaCity, we handle recurring blockages and emergency overflows quickly.',
+  },
+  {
+    name: 'Stockport',
+    slug: 'stockport',
+    serviceSlug: 'drain-unblocking',
+    copy: 'We support households and businesses across Stockport with rapid drain unblocking, jetting, and planned maintenance visits.',
+  },
+  {
+    name: 'Altrincham',
+    slug: 'altrincham',
+    serviceSlug: 'cctv-drain-surveys',
+    copy: 'Our CCTV surveys in Altrincham help identify hidden defects, root ingress, and repeat blockage causes before they become costly.',
+  },
+];
+
+const trustGallery = [
+  {
+    src: '/og/blocked-drains-og.webp',
+    fallback: '/og/blocked-drains-og.jpg',
+    alt: 'Drain engineer clearing blocked drains in Manchester using professional equipment',
+    title: 'Blocked Drains',
+  },
+  {
+    src: '/og/cctv-surveys-og.webp',
+    fallback: '/og/cctv-surveys-og.jpg',
+    alt: 'CCTV drain survey inspection in Greater Manchester to diagnose drainage faults',
+    title: 'CCTV Survey',
+  },
+  {
+    src: '/og/emergency-drains-og.webp',
+    fallback: '/og/emergency-drains-og.jpg',
+    alt: 'Emergency drain response team attending urgent drainage issue in Manchester',
+    title: 'Emergency Response',
+  },
+];
 ---
 
 <BaseLayout title={title} description={description} canonical="/" schema={combinedSchema}>
@@ -75,7 +144,7 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
 
           <!-- Subheading -->
           <p class="text-lg md:text-xl text-white/85 mb-8 max-w-xl">
-            Fast, professional drain unblocking across Greater Manchester. No call-out charges. Fixed pricing. We're at your door within the hour.
+            Fast emergency drain unblocking in Manchester with no call-out fee, fixed pricing, and a local team that aims to reach you within the hour.
           </p>
 
           <!-- Tick Features -->
@@ -237,6 +306,46 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
     </div>
   </section>
 
+  <!-- What Is Included -->
+  <section class="section-padding bg-muted/30">
+    <div class="container-wide px-4">
+      <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="bg-card rounded-xl p-6 card-elevated">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">What Is Included In Your Visit</h2>
+          <p class="text-muted-foreground mb-4">
+            Every job starts with a clear plan and transparent communication. If you need urgent help, call
+            <a href={`tel:${BRAND.phone}`} class="text-primary font-semibold hover:underline"> {BRAND.phoneFormatted}</a> for immediate support.
+          </p>
+          <ul class="space-y-3">
+            {serviceVisitInclusions.map((item) => (
+              <li class="flex gap-3">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary mt-1 shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+                <span class="text-sm text-muted-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-card rounded-xl p-6 card-elevated">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">How Our Drain Service Works</h2>
+          <div class="space-y-4">
+            {serviceProcess.map((step) => (
+              <div>
+                <h3 class="font-semibold">{step.title}</h3>
+                <p class="text-sm text-muted-foreground">{step.text}</p>
+              </div>
+            ))}
+          </div>
+          <p class="text-sm text-muted-foreground mt-5">
+            Need specialist diagnostics? Our
+            <a href="/services/cctv-drain-surveys/" class="text-primary hover:underline"> CCTV drain survey service</a>
+            helps pinpoint hidden issues accurately before repairs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Services Grid -->
   <section class="section-padding bg-muted/30">
     <div class="container-wide px-4">
@@ -333,6 +442,19 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
         ))}
       </div>
 
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-8">
+        {locationHighlights.map((location) => (
+          <article class="bg-card rounded-xl p-5 card-elevated">
+            <h3 class="font-bold mb-2">Blocked Drains in {location.name}</h3>
+            <p class="text-sm text-muted-foreground mb-3">{location.copy}</p>
+            <div class="flex flex-wrap gap-3 text-sm">
+              <a href={`/locations/${location.slug}/`} class="text-primary hover:underline">{location.name} drainage page</a>
+              <a href={`/locations/${location.slug}/${location.serviceSlug}/`} class="text-primary hover:underline">Popular local service</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
       <div class="text-center mt-8">
         <a href="/locations/" class="btn-primary">
           View All Areas
@@ -359,7 +481,7 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
             class="flex items-center gap-3 p-4 bg-card rounded-lg card-elevated hover:bg-muted/50 transition-colors group"
           >
             <span class="text-2xl">{link.icon}</span>
-            <span class="flex-1 font-medium text-sm">{link.label}</span>
+            <h3 class="flex-1 font-medium text-sm">{link.label}</h3>
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted-foreground group-hover:text-primary transition-colors"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </a>
         ))}
@@ -369,6 +491,37 @@ const priorityLinks = SERVICES.slice(0, 3).flatMap((service) =>
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           View all service areas
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Gallery -->
+  <section class="section-padding bg-muted/30">
+    <div class="container-wide px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3">Recent Drainage Work Across Manchester</h2>
+        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Real-world service examples that show our equipment, diagnostics, and emergency response capability.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {trustGallery.map((image) => (
+          <figure class="bg-card rounded-xl overflow-hidden card-elevated">
+            <picture>
+              <source srcset={image.src} type="image/webp" />
+              <img
+                src={image.fallback}
+                alt={image.alt}
+                width="1200"
+                height="630"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-48 object-cover"
+              />
+            </picture>
+            <figcaption class="p-4 text-sm font-medium">{image.title}</figcaption>
+          </figure>
+        ))}
       </div>
     </div>
   </section>

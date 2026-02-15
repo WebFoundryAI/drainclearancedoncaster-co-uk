@@ -12,8 +12,24 @@ export const GENERIC_FAQS: FAQ[] = [
     answer: `No, ${BRAND.brandName} does not charge any call-out fees. You only pay for the work completed.`,
   },
   {
+    question: "How quickly can you arrive in an emergency?",
+    answer: `For urgent drainage issues, we aim to arrive within 60-90 minutes across ${BRAND.serviceAreaLabel}, traffic and weather permitting.`,
+  },
+  {
     question: "Are you available for emergencies?",
     answer: `Yes, we offer 24/7 emergency drainage services across ${BRAND.serviceAreaLabel}. Call ${BRAND.phoneFormatted} for immediate assistance.`,
+  },
+  {
+    question: "How much does drain unblocking cost?",
+    answer: "Costs depend on access, blockage severity, and whether repairs are needed. We give a clear fixed quote before work starts, so you know exactly what you're paying for.",
+  },
+  {
+    question: "What is included in your service visit?",
+    answer: "A standard visit includes problem diagnosis, access checks, blockage clearance where possible, and practical aftercare advice to help prevent repeat issues.",
+  },
+  {
+    question: "Do you work with landlords and commercial properties?",
+    answer: "Yes. We support homeowners, landlords, letting agents, and businesses, including restaurants, offices, retail units, and managed properties.",
   },
   {
     question: "Do you provide a guarantee on your work?",
