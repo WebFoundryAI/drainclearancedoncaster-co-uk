@@ -28,6 +28,17 @@ routes = [
 # Compatibility Date
 compatibility_date = "2024-12-20"
 
+# D1 Database binding for lead capture
+# Create the database:  wrangler d1 create manchester-leads
+# Run migrations:       wrangler d1 migrations apply manchester-leads
+# Then update the database_id below with the value from the create command.
+# Also add a D1 binding in Cloudflare Pages dashboard:
+#   Settings > Functions > D1 database bindings > Variable name: DB
+[[d1_databases]]
+binding = "DB"
+database_name = "manchester-leads"
+database_id = ""  # paste your D1 database ID here after running: wrangler d1 create manchester-leads
+
 # Build Configuration
 [build]
 command = "bun install && bun run build"
