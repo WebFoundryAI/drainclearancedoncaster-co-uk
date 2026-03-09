@@ -23,7 +23,7 @@ const staticPages = [
   { url: '/locations/', name: 'All Locations' },
   { url: '/about/', name: 'About Us' },
   { url: '/contact/', name: 'Contact Us' },
-  { url: '/frequently-asked-questions/', name: 'FAQ' },
+  { url: '/faq/', name: 'FAQ' },
   { url: '/privacy/', name: 'Privacy Policy' },
   { url: '/terms/', name: 'Terms of Service' },
   { url: '/cookies/', name: 'Cookie Policy' },
@@ -68,7 +68,7 @@ const totalPages =
   1; // for /blog/ index page
 ---
 
-<BaseLayout title={title} description={description} canonical="/sitemap/" noindex={true} schema={breadcrumbSchema}>
+<BaseLayout title={title} description={description} canonical="/sitemap/" schema={breadcrumbSchema}>
   <section class="section-padding">
     <div class="container-wide px-4">
       <h1 class="text-3xl font-bold mb-2">Sitemap</h1>

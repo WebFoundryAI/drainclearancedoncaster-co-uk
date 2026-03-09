@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { BRAND } from '../data/brand';
 import { SERVICES } from '../data/services';
+import { getWebPageSchema } from '../utils/schema';
 
 export const prerender = true;
 
@@ -10,9 +11,15 @@ const title = `Page Not Found | ${BRAND.brandName}`;
 
 // SEO-optimized description (120-155 chars)
 const description = `Sorry, this page doesn't exist. Find professional drainage services across ${BRAND.serviceAreaLabel} or call ${BRAND.phoneFormatted} for immediate help.`;
+
+const pageSchema = getWebPageSchema({
+  url: '/404/',
+  name: title,
+  description: description,
+});
 ---
 
-<BaseLayout title={title} description={description} noindex={true}>
+<BaseLayout title={title} description={description} noindex={true} schema={pageSchema}>
   <section class="section-padding">
     <div class="container-wide px-4">
       <div class="max-w-2xl mx-auto text-center">

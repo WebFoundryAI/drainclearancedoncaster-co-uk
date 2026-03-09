@@ -15,13 +15,13 @@ const keywords = "blocked drains Edinburgh FAQ, drain unblocking questions, drai
 
 const breadcrumbItems = [
   { name: "Home", url: "/" },
-  { name: "FAQs", url: "/frequently-asked-questions/" }
+  { name: "FAQs", url: "/faq/" }
 ];
 
 const breadcrumbSchema = getBreadcrumbSchema(breadcrumbItems);
 const faqSchema = getFAQSchema(PAGE_FAQS);
 const webPageSchema = getWebPageSchema({
-  url: '/frequently-asked-questions/',
+  url: '/faq/',
   name: title,
   description: description,
   breadcrumb: breadcrumbItems
@@ -30,7 +30,7 @@ const webPageSchema = getWebPageSchema({
 const combinedPageSchema = [breadcrumbSchema, faqSchema, webPageSchema];
 ---
 
-<BaseLayout title={title} description={description} canonical="/frequently-asked-questions/" schema={combinedPageSchema} keywords={keywords}>
+<BaseLayout title={title} description={description} canonical="/faq/" schema={combinedPageSchema} keywords={keywords}>
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-overlay py-16 md:py-20">

@@ -1,8 +1,10 @@
 # Redirects for Cloudflare Pages/Workers
-# Redirect www to non-www (canonical domain)
-# Note: HTTP to HTTPS is handled automatically by Cloudflare's SSL/TLS settings
 
 # www to non-www redirect (301 permanent)
-https://www.edinburghdrainunblocker.co.uk/* https://edinburghdrainunblocker.co.uk/:splat 301
-http://www.edinburghdrainunblocker.co.uk/* https://edinburghdrainunblocker.co.uk/:splat 301
-http://edinburghdrainunblocker.co.uk/* https://edinburghdrainunblocker.co.uk/:splat 301
+https://www.glasgowdrainunblocker.co.uk/* https://glasgowdrainunblocker.co.uk/:splat 301
+http://www.glasgowdrainunblocker.co.uk/* https://glasgowdrainunblocker.co.uk/:splat 301
+http://glasgowdrainunblocker.co.uk/* https://glasgowdrainunblocker.co.uk/:splat 301
+
+# Old FAQ URL redirect (301 permanent)
+/frequently-asked-questions/ /faq/ 301
+/frequently-asked-questions /faq/ 301

@@ -1,14 +1,24 @@
-export const ABOUT_CONTENT = `Edinburgh Drain Unblocker is a professional drainage company dedicated to serving residents and businesses across Edinburgh and the Lothians. Our team of experienced engineers specialises in resolving all types of drainage issues, from simple blockages to complex repairs and installations.
+export const ABOUT_CONTENT = `Glasgow Drain Unblocker helps homes and businesses across Glasgow with all types of drainage problems. Our skilled engineers fix everything from simple blockages to broken pipes and full drain repairs. We have built our reputation on honest work, clear communication, and reliable results.
 
-We understand that drainage problems can occur at any time, often without warning. That is why we offer a rapid response service, available around the clock, to ensure you receive the help you need when you need it most. Our commitment to reliability means you can count on us to arrive promptly and equipped with the tools and expertise to address your drainage concerns efficiently.
+Drain problems can happen at any time. That is why we work around the clock, every day of the year. When you call us, we get to you fast with the right tools to fix the issue. Our team carries CCTV cameras, high-pressure jetting equipment, drain rods, and repair materials on every callout so we can diagnose and resolve most problems in a single visit.
 
-At Edinburgh Drain Unblocker, we pride ourselves on transparency and honesty. We provide clear, upfront pricing with no hidden charges, so you know exactly what to expect before any work begins. Our engineers take the time to explain the issue and the recommended solution, empowering you to make informed decisions about your property.
+We believe in honest pricing. You get a clear, fixed quote before any work starts. There are no hidden fees and no surprises on the bill. Our engineers explain the problem in plain English and talk you through your options so you can make an informed decision. We will never pressure you into work you do not need.
 
-Our services cover a comprehensive range of drainage needs, including drain unblocking, CCTV drain surveys, high-pressure jetting, drain repairs, and emergency callouts. Whether you are dealing with a blocked sink, a damaged pipe, or a more serious drainage emergency, we have the skills and equipment to restore your system to full working order.
+We offer a full range of drain services. These include drain unblocking, CCTV drain surveys, high-pressure jetting, drain repairs, pipe relining, and 24/7 emergency callouts. Whether you have a blocked sink, a cracked pipe, tree root damage, or a flooding emergency, we have the equipment and experience to help.
 
-We are proud to serve Edinburgh and its surrounding communities, including Leith, Musselburgh, Dalkeith, Livingston, Corstorphine, Morningside, Portobello, and Bonnyrigg. Our local knowledge allows us to respond quickly and understand the specific drainage challenges that properties in this region may face, from the Georgian tenements of the New Town to the Victorian villas of Morningside.
+Our engineers are fully trained and hold industry-recognised qualifications. Every member of the team is DBS checked, uniformed, and carries full public liability insurance. We invest in ongoing training to keep our skills and knowledge up to date with the latest drainage technology and best practice.
 
-When you choose Edinburgh Drain Unblocker, you choose a team that values quality workmanship, customer satisfaction, and integrity. We are fully insured and committed to delivering a service that meets the highest standards. If you are experiencing drainage issues, do not hesitate to get in touch. Our friendly team is ready to assist you.`;
+We use modern equipment on every job. Our CCTV survey cameras produce high-definition footage that clearly shows the condition of your pipes. Our jetting machines deliver water at pressures up to 4,000 PSI to cut through the toughest blockages. For repairs, we offer trenchless pipe relining, which fixes damaged pipes without digging up your garden or driveway.
+
+We cover Glasgow and the areas around it. This includes East Kilbride, Paisley, Motherwell, Hamilton, Lanark, Cumbernauld, Coatbridge, and Rutherglen. We know the local area well, so we can reach you quickly and understand the drainage issues common to your neighbourhood. Many Glasgow properties have older clay or cast iron drainage systems that need specialist knowledge to maintain and repair.
+
+We work with homeowners, landlords, letting agents, estate agents, and commercial property managers. Our services suit domestic and commercial properties of all sizes. We regularly carry out pre-purchase drain surveys for home buyers, planned maintenance for property managers, and emergency repairs for businesses that cannot afford downtime.
+
+Customer satisfaction matters to us. We aim to resolve every problem on the first visit and leave your property clean and tidy when we finish. If we find a problem that requires follow-up work, we explain exactly what is needed and provide a written quote before proceeding.
+
+We are committed to fair pricing and transparent service. We do not charge call-out fees. We do not add extra charges for evenings, weekends, or bank holidays. The price we quote is the price you pay. We accept payment by cash, card, bank transfer, or online payment.
+
+If you have a drainage problem, give us a call. Our friendly team is ready to help, day or night. You can also fill in the contact form on our website and we will call you back within 30 minutes during business hours.`;
 
 export const SERVICES_OVERVIEW = `At Edinburgh Drain Unblocker, we provide a comprehensive range of professional drainage services designed to meet the needs of residential and commercial properties throughout Edinburgh and the Lothians. Our experienced team is equipped with the latest technology and expertise to handle everything from minor blockages to complex drainage issues, ensuring your property's drainage system operates efficiently and reliably.`;
 
