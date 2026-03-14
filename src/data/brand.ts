@@ -1,8 +1,8 @@
 export const BRAND = {
   brandName: "Drain Clearance Doncaster",
   domain: "drainclearancedoncaster.co.uk",
-  primaryLocation: "Manchester",
-  serviceAreaLabel: "Manchester and surrounding areas",
+  primaryLocation: "Doncaster",
+  serviceAreaLabel: "Doncaster and surrounding areas",
   phone: "01302368686",
   phoneFormatted: "01302 368686",
   email: "info@drainclearancedoncaster.co.uk",

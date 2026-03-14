@@ -81,20 +81,20 @@ function generateSitemapUrls(): SitemapUrl[] {
 
   // Location pages (only indexed locations)
   for (const [i, location] of INDEXED_LOCATIONS.entries()) {
-    // Main location page (Manchester gets higher priority)
-    const isManchester = location.slug === 'manchester';
+    // Main location page (Doncaster gets higher priority)
+    const isDoncaster = location.slug === 'doncaster';
     urls.push({
       loc: `/locations/${location.slug}/`,
-      priority: isManchester ? 0.9 : 0.8,
+      priority: isDoncaster ? 0.9 : 0.8,
       changefreq: 'weekly',
-      lastmod: getStaggeredDate(isManchester ? 1 : 2 + i),
+      lastmod: getStaggeredDate(isDoncaster ? 1 : 2 + i),
     });
 
     // Location + Service combinations
     for (const [j, service] of SERVICES.entries()) {
       urls.push({
         loc: `/locations/${location.slug}/${service.slug}/`,
-        priority: isManchester ? 0.8 : 0.7,
+        priority: isDoncaster ? 0.8 : 0.7,
         changefreq: 'monthly',
         lastmod: getStaggeredDate(3 + i + j * 2),
       });
